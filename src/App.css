@@ -122,7 +122,9 @@
   flex: 1;
   min-height: 2.75rem;
   max-height: 7rem;
-  resize: vertical;
+  height: auto;
+  resize: none;
+  overflow: hidden;
   border: 1px solid #d1d5db;
   border-radius: 0.875rem;
   padding: 0.75rem 0.9rem;

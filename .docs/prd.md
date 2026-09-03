@@ -173,7 +173,7 @@ Os nomes podem ser ajustados caso a estrutura existente use outra convenção, m
 
 Status: concluído.
 
-### 2. Criar os tipos do domínio
+### 2. Criar os tipos do domínio [x]
 
 - Criar `src/types` caso ainda não exista.
 - Adicionar o tipo `ChatMessage` com `id`, `text` e `sender`.
@@ -181,7 +181,7 @@ Status: concluído.
 
 **Concluído quando:** o domínio das mensagens está tipado e pode ser importado pelos componentes.
 
-### 3. Montar a estrutura visual principal
+### 3. Montar a estrutura visual principal [x]
 
 - Criar a área de página com fundo marrom claro.
 - Criar o container central com largura máxima `2xl` e altura adequada à viewport.
@@ -189,7 +189,7 @@ Status: concluído.
 
 **Concluído quando:** a tela tem a composição espacial do chat, ainda que sem comportamento completo.
 
-### 4. Implementar a mensagem e o histórico
+### 4. Implementar a mensagem e o histórico [x]
 
 - Criar `ChatMessage` para alinhar mensagens do robô à esquerda e do usuário à direita.
 - Criar `ChatHistory` para renderizar uma lista de mensagens.
@@ -198,7 +198,7 @@ Status: concluído.
 
 **Concluído quando:** a mensagem inicial aparece corretamente e a lista consegue renderizar mensagens de ambos os papéis.
 
-### 5. Implementar o toggle de papel
+### 5. Implementar o toggle de papel [x]
 
 - Criar `RoleToggle` como controle acessível e controlado pelo componente pai.
 - Iniciar o papel ativo como usuário.
@@ -207,7 +207,7 @@ Status: concluído.
 
 **Concluído quando:** o papel ativo pode ser alterado sem modificar mensagens existentes.
 
-### 6. Implementar o compositor de mensagens
+### 6. Implementar o compositor de mensagens [x]
 
 - Criar `MessageComposer` com campo controlado, toggle e botão de enviar.
 - Usar o placeholder definido.
@@ -217,7 +217,7 @@ Status: concluído.
 
 **Concluído quando:** todos os controles estão visíveis, acessíveis e refletem o estado atual.
 
-### 7. Conectar o envio ao estado do chat
+### 7. Conectar o envio ao estado do chat [x]
 
 - Implementar a função de envio no componente coordenador.
 - Validar texto vazio ou composto somente por espaços.
@@ -227,7 +227,7 @@ Status: concluído.
 
 **Concluído quando:** os fluxos de usuário e robô funcionam pelo botão e pelo teclado.
 
-### 8. Refinar responsividade e estados de interação
+### 8. Refinar responsividade e estados de interação [x]
 
 - Ajustar espaçamentos, largura, rolagem e altura em telas móveis.
 - Revisar foco, hover e estado desabilitado do botão.
@@ -236,7 +236,7 @@ Status: concluído.
 
 **Concluído quando:** a interface permanece utilizável em desktop e mobile sem sobreposição.
 
-### 9. Validar o MVP
+### 9. Validar o MVP [x]
 
 - Executar `npm run lint`.
 - Executar `npm run build`.

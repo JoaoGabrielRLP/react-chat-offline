@@ -1,4 +1,4 @@
-import type { KeyboardEvent } from 'react'
+import { useEffect, useRef, type KeyboardEvent } from 'react'
 import type { Sender } from '../types/chat'
 import { RoleToggle } from './RoleToggle'
 
@@ -11,7 +11,19 @@ type MessageComposerProps = {
 }
 
 export function MessageComposer({ value, role, onChange, onRoleChange, onSubmit }: MessageComposerProps) {
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null)
   const isDisabled = value.trim().length === 0
+
+  useEffect(() => {
+    const textarea = textareaRef.current
+
+    if (!textarea) {
+      return
+    }
+
+    textarea.style.height = 'auto'
+    textarea.style.height = `${Math.min(textarea.scrollHeight, 112)}px`
+  }, [value])
 
   const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === 'Enter' && !event.shiftKey) {
@@ -28,6 +40,7 @@ export function MessageComposer({ value, role, onChange, onRoleChange, onSubmit 
         <RoleToggle value={role} onChange={onRoleChange} />
 
         <textarea
+          ref={textareaRef}
           aria-label="Escreva sua mensagem"
           className="message-input"
           value={value}

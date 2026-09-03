@@ -12,7 +12,7 @@ const roles: { label: string; value: Sender }[] = [
 
 export function RoleToggle({ value, onChange }: RoleToggleProps) {
   return (
-    <div className="role-toggle" role="radiogroup" aria-label="Tipo de remetente da mensagem">
+    <div className="role-toggle" role="radiogroup" aria-label="Selecionar papel da mensagem">
       {roles.map((role) => {
         const isActive = value === role.value
 
@@ -20,9 +20,10 @@ export function RoleToggle({ value, onChange }: RoleToggleProps) {
           <button
             key={role.value}
             type="button"
+            role="radio"
+            aria-checked={isActive}
             className={`role-option ${isActive ? 'active' : ''}`}
             aria-label={`Selecionar ${role.label}`}
-            aria-pressed={isActive}
             onClick={() => onChange(role.value)}
           >
             {role.label}
