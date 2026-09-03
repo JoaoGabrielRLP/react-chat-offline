@@ -163,13 +163,15 @@ Os nomes podem ser ajustados caso a estrutura existente use outra convenção, m
 
 ## 12. Tarefas de implementação em ordem progressiva
 
-### 1. Confirmar a base do projeto
+### 1. Confirmar a base do projeto [x]
 
 - Inspecionar `src/App.tsx`, `src/App.css` e `src/index.css`.
 - Confirmar o ponto de entrada atual e preservar a configuração existente do Vite/Tailwind.
 - Remover ou substituir o conteúdo demonstrativo do template somente nos arquivos necessários.
 
 **Concluído quando:** a aplicação ainda inicia com `npm run dev` e a base está pronta para receber a tela de chat.
+
+Status: concluído.
 
 ### 2. Criar os tipos do domínio
 
