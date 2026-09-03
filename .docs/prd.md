@@ -278,16 +278,16 @@ Cada tarefa deve resultar em algo funcional ou visualmente verificável antes de
 ### Fase 5 — Polimento
 
 #### Tarefa 5.1 — Ajustes visuais finais
-- [ ] Espaçamento consistente entre bolhas (`gap-2` ou `space-y-2`)
-- [ ] Padding interno nas bolhas e no card de input
-- [ ] Transição suave na borda do card ao alternar toggle (opcional: `transition-colors`)
-- [ ] Revisar contraste e legibilidade no fundo marrom
+- [x] Espaçamento consistente entre bolhas (`gap-2` ou `space-y-2`)
+- [x] Padding interno nas bolhas e no card de input
+- [x] Transição suave na borda do card ao alternar toggle (opcional: `transition-colors`)
+- [x] Revisar contraste e legibilidade no fundo marrom
 - **Verificação:** UI coesa e alinhada com as especificações visuais
 
 #### Tarefa 5.2 — Revisão de qualidade
-- [ ] Rodar `npm run lint` e corrigir issues
-- [ ] Rodar `npm run build` sem erros
-- [ ] Teste manual do fluxo completo:
+- [x] Rodar `npm run lint` e corrigir issues
+- [x] Rodar `npm run build` sem erros
+- [x] Teste manual do fluxo completo:
   - Estado vazio → enviar como usuário → enviar como robô → alternar toggle → scroll automático
 - **Verificação:** build e lint limpos; fluxo manual OK
 

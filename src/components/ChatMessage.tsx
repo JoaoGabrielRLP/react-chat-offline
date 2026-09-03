@@ -5,10 +5,10 @@ type ChatMessageProps = {
 }
 
 export function ChatMessage({ message }: ChatMessageProps) {
-  const isUserMessage = message.sender === 'user'
+  const isUser = message.sender === 'user'
 
   return (
-    <article className={`chat-message ${isUserMessage ? 'user' : 'bot'}`}>
+    <article className={`chat-message ${isUser ? 'user' : 'bot'}`}>
       <div className="chat-bubble">{message.text}</div>
     </article>
   )

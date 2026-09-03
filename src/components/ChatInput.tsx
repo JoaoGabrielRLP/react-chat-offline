@@ -13,6 +13,7 @@ type ChatInputProps = {
 export function ChatInput({ value, onChange, onSend, sender, onToggleSender }: ChatInputProps) {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
   const canSend = value.trim().length > 0
+  const isUser = sender === 'user'
 
   useEffect(() => {
     if (value === '' && textareaRef.current) {
@@ -38,8 +39,8 @@ export function ChatInput({ value, onChange, onSend, sender, onToggleSender }: C
 
   return (
     <div
-      className={`fixed bottom-4 left-1/2 w-[calc(100%-1.5rem)] max-w-2xl -translate-x-1/2 rounded-xl border bg-white p-3 shadow-lg transition-colors sm:bottom-6 ${
-        sender === 'robot' ? 'border-2 border-purple-500' : 'border-stone-200'
+      className={`fixed bottom-8 left-1/2 w-[calc(100%-1.5rem)] max-w-2xl -translate-x-1/2 rounded-xl border bg-white p-3 shadow-lg transition-colors sm:bottom-8 ${
+        isUser ? 'border-stone-200' : 'border-2 border-purple-500'
       }`}
     >
       <div className="flex items-end gap-3">
@@ -52,7 +53,7 @@ export function ChatInput({ value, onChange, onSend, sender, onToggleSender }: C
           onChange={(event) => handleChange(event.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Digite uma mensagem..."
-          className="max-h-24 min-h-11 flex-1 resize-none overflow-y-auto rounded-lg border border-stone-200 bg-stone-50 px-3 py-2 text-sm text-stone-800 placeholder:text-stone-500 focus:border-stone-300 focus:outline-none"
+          className="max-h-24 min-h-11 min-w-0 flex-1 resize-none overflow-y-auto rounded-lg bg-stone-50 px-3 py-2 text-sm text-stone-800 placeholder:text-stone-500 focus:outline-none focus:ring-2 focus:ring-stone-400"
         />
 
         <button
