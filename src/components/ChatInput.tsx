@@ -57,8 +57,8 @@ export function ChatInput({ value, onChange, onSend, sender, onToggleSender, dis
       `}
     >
       <div className="flex items-end gap-3">
-        {/* Toggle usuário / robô */}
-        <SenderToggle sender={sender} onToggle={onToggleSender} />
+        {/* Toggle usuário / robô — também desabilitado quando o input está bloqueado */}
+        <SenderToggle sender={sender} onToggle={onToggleSender} disabled={disabled} />
 
         {/* Campo de texto com auto-resize e placeholder contextual */}
         <textarea

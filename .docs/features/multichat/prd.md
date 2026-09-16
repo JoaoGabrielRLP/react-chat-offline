@@ -294,22 +294,22 @@ sequenceDiagram
 ### Fase 3 — Integração do Chat e Empty States
 
 #### Tarefa 3.1 — Desativação do Input quando sem conversa ativa
-- [ ] Atualizar `src/components/ChatInput.tsx` para receber prop `disabled` (ou obter da store).
-- [ ] Aplicar classes de opacidade reduzida (`opacity-50`), `cursor-not-allowed` e desabilitar `textarea`, `SenderToggle` e botão Enviar quando desabilitado.
-- [ ] Ajustar placeholder para *"Selecione ou crie uma conversa para digitar..."* quando desabilitado.
+- [x] Atualizar `src/components/ChatInput.tsx` para receber prop `disabled` (ou obter da store).
+- [x] Aplicar classes de opacidade reduzida (`opacity-50`), `cursor-not-allowed` e desabilitar `textarea`, `SenderToggle` e botão Enviar quando desabilitado.
+- [x] Ajustar placeholder para *"Selecione ou crie uma conversa para digitar..."* quando desabilitado.
 - **Verificação:** ao carregar a página inicial sem conversa ativa, o input é exibido bloqueado e esmaecido.
 
 #### Tarefa 3.2 — Ajuste dos Empty States em MessageList
-- [ ] Atualizar `src/components/MessageList.tsx` para tratar dois estados vazios:
+- [x] Atualizar `src/components/MessageList.tsx` para tratar dois estados vazios:
   1. `activeChatId === null`: exibir *"Nenhuma conversa selecionada. Crie uma nova conversa ou selecione uma na barra lateral para começar."*
   2. `activeChatId !== null` mas sem mensagens: exibir *"Nenhuma mensagem ainda. Envie a primeira!"*
-- [ ] Garantir auto-scroll para a última mensagem ao trocar de conversa ativa ou ao receber nova mensagem.
+- [x] Garantir auto-scroll para a última mensagem ao trocar de conversa ativa ou ao receber nova mensagem.
 - **Verificação:** mensagens de empty state corretas para cada cenário.
 
 #### Tarefa 3.3 — Integração completa no componente Chat
-- [ ] Conectar `src/components/Chat.tsx` à store Zustand.
-- [ ] Integrar `Sidebar`, `MessageList` e `ChatInput`.
-- [ ] Remover estados locais obsoletos (`messages` em `useState`).
+- [x] Conectar `src/components/Chat.tsx` à store Zustand.
+- [x] Integrar `Sidebar`, `MessageList` e `ChatInput`.
+- [x] Remover estados locais obsoletos (`messages` em `useState`).
 - **Verificação:** envio de mensagens funcionando dentro da conversa ativa selecionada.
 
 ---
@@ -351,12 +351,12 @@ sequenceDiagram
 - [x] Instalação e configuração do Zustand com TypeScript.
 - [x] Store criada em `src/stores/chatStore.ts` com actions de criar, selecionar e enviar mensagem.
 - [x] Conversas e mensagens persistidas no `localStorage`.
-- [ ] Ao abrir/recarregar a página, a aplicação inicia em estado vazio (nenhum chat selecionado).
-- [ ] Input desabilitado (opacidade 50% e controles inoperantes) quando não há chat selecionado.
-- [ ] Mensagem de orientação no centro da tela quando não há chat ativo.
-- [ ] Sidebar com botão de "+ Nova conversa" e lista de chats existentes.
-- [ ] Identificador exibido na sidebar no formato encurtado (`#xxxxxxxx`).
-- [ ] Alternância entre conversas restaura o histórico específico de cada uma.
+- [x] Ao abrir/recarregar a página, a aplicação inicia em estado vazio (nenhum chat selecionado).
+- [x] Input desabilitado (opacidade 50% e controles inoperantes) quando não há chat selecionado.
+- [x] Mensagem de orientação no centro da tela quando não há chat ativo.
+- [x] Sidebar com botão de "+ Nova conversa" e lista de chats existentes.
+- [x] Identificador exibido na sidebar no formato encurtado (`#xxxxxxxx`).
+- [x] Alternância entre conversas restaura o histórico específico de cada uma.
 - [ ] Drawer retrátil no mobile acionado por botão hambúrguer no canto superior esquerdo.
 - [ ] Fechamento automático do menu mobile ao criar ou selecionar conversa.
 - [ ] `npm run lint` e `npm run build` executam sem erros.
