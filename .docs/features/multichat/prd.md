@@ -317,16 +317,16 @@ sequenceDiagram
 ### Fase 4 — Testes, Polimento e Validação
 
 #### Tarefa 4.1 — Verificação de persistência e recarregamento
-- [ ] Criar 3 conversas com mensagens distintas em cada uma.
-- [ ] Recarregar a página (F5):
+- [x] Criar 3 conversas com mensagens distintas em cada uma.
+- [x] Recarregar a página (F5):
   - Verificar se a aplicação inicia com `activeChatId: null` (empty state e input desabilitado).
   - Verificar se as 3 conversas permanecem listadas no sidebar com seus respectivos históricos preservados.
   - Clicar em cada conversa e confirmar se as mensagens corretas são restauradas.
 - **Verificação:** persistência íntegra sem vazamento de mensagens entre chats.
 
 #### Tarefa 4.2 — Qualidade de código e build
-- [ ] Executar `npm run lint` (`oxlint`) e resolver eventuais avisos.
-- [ ] Executar `npm run build` para garantir conformidade estrita do TypeScript e empacotamento Vite.
+- [x] Executar `npm run lint` (`oxlint`) e resolver eventuais avisos.
+- [x] Executar `npm run build` para garantir conformidade estrita do TypeScript e empacotamento Vite.
 - **Verificação:** build e lint passam com 0 erros.
 
 ---
@@ -357,7 +357,7 @@ sequenceDiagram
 - [x] Sidebar com botão de "+ Nova conversa" e lista de chats existentes.
 - [x] Identificador exibido na sidebar no formato encurtado (`#xxxxxxxx`).
 - [x] Alternância entre conversas restaura o histórico específico de cada uma.
-- [ ] Drawer retrátil no mobile acionado por botão hambúrguer no canto superior esquerdo.
-- [ ] Fechamento automático do menu mobile ao criar ou selecionar conversa.
-- [ ] `npm run lint` e `npm run build` executam sem erros.
+- [x] Drawer retrátil no mobile acionado por botão hambúrguer no canto superior esquerdo.
+- [x] Fechamento automático do menu mobile ao criar ou selecionar conversa.
+- [x] `npm run lint` e `npm run build` executam sem erros.
 

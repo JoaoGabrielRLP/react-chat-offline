@@ -36,6 +36,8 @@ export type ChatActions = {
   selectChat: (id: ChatId) => void
   // Adiciona uma mensagem ao histórico da conversa atualmente ativa
   addMessage: (text: string, sender: MessageSender) => void
+  // Exclui uma conversa pelo ID
+  deleteChat: (id: ChatId) => void
 }
 
 /**

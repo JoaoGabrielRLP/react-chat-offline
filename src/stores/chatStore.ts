@@ -110,6 +110,27 @@ export const useChatStore = create<ChatStore>()(
           }
         })
       },
+
+      /**
+       * Exclui uma conversa pelo seu ID.
+       * Remove a conversa do dicionário e da lista de ordem.
+       * Se a conversa excluída era a ativa, redefine a ativa para null.
+       * @param id Identificador da conversa a ser excluída
+       */
+      deleteChat: (id) => {
+        set((state) => {
+          const newChats = { ...state.chats }
+          delete newChats[id]
+
+          const newChatOrder = state.chatOrder.filter((chatId) => chatId !== id)
+          
+          return {
+            chats: newChats,
+            chatOrder: newChatOrder,
+            activeChatId: state.activeChatId === id ? null : state.activeChatId,
+          }
+        })
+      },
     }),
     {
       // Chave utilizada para persistência no localStorage do navegador

@@ -13,6 +13,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const activeChatId = useChatStore((state) => state.activeChatId)
   const createChat = useChatStore((state) => state.createChat)
   const selectChat = useChatStore((state) => state.selectChat)
+  const deleteChat = useChatStore((state) => state.deleteChat)
 
   // Cria uma nova conversa e fecha o drawer no mobile automaticamente
   const handleCreateChat = () => {
@@ -24,6 +25,11 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const handleSelectChat = (id: string) => {
     selectChat(id)
     onClose()
+  }
+
+  // Exclui uma conversa e previne eventos padrão
+  const handleDeleteChat = (id: string) => {
+    deleteChat(id)
   }
 
   return (
@@ -84,12 +90,12 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 const shortId = `#${id.slice(0, 8)}`
 
                 return (
-                  <li key={id}>
+                  <li key={id} className="group relative">
                     <button
                       type="button"
                       onClick={() => handleSelectChat(id)}
                       className={`
-                        w-full rounded-lg px-3 py-2 text-left text-sm font-mono transition-colors
+                        w-full rounded-lg px-3 py-2 pr-10 text-left text-sm font-mono transition-colors
                         ${
                           isActive
                             ? // Estilo do item ativo: fundo branco, borda e sombra sutil
@@ -100,6 +106,16 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                       `}
                     >
                       {shortId}
+                    </button>
+                    {/* Botão de excluir que aparece no hover */}
+                    <button
+                      type="button"
+                      onClick={() => handleDeleteChat(id)}
+                      title="Excluir conversa"
+                      aria-label="Excluir conversa"
+                      className="absolute right-1 top-1/2 -translate-y-1/2 rounded-md p-1.5 opacity-0 transition-opacity hover:bg-red-100 group-hover:opacity-100 focus:opacity-100"
+                    >
+                      🗑️
                     </button>
                   </li>
                 )
